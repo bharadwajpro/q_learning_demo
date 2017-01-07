@@ -1,4 +1,4 @@
-from Tkinter import *
+from tkinter import *
 master = Tk()
 __author__ = 'philippe'
 
