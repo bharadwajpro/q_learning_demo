@@ -1,7 +1,7 @@
-__author__ = 'philippe'
 import World
 import threading
 import time
+__author__ = 'philippe'
 
 discount = 0.3
 actions = World.actions

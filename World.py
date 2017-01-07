@@ -1,6 +1,6 @@
-__author__ = 'philippe'
 from Tkinter import *
 master = Tk()
+__author__ = 'philippe'
 
 triangle_size = 0.1
 cell_score_min = -0.2
@@ -51,7 +51,7 @@ def render_grid():
             temp = {}
             for action in actions:
                 temp[action] = create_triangle(i, j, action)
-            cell_scores[(i,j)] = temp
+            cell_scores[(i, j)] = temp
     for (i, j, c, w) in specials:
         board.create_rectangle(i*Width, j*Width, (i+1)*Width, (j+1)*Width, fill=c, width=1)
     for (i, j) in walls:
@@ -76,7 +76,7 @@ def set_cell_score(state, action, val):
 
 def try_move(dx, dy):
     global player, x, y, score, walk_reward, me, restart
-    if restart == True:
+    if restart is True:
         restart_game()
     new_x = player[0] + dx
     new_y = player[1] + dy
@@ -89,12 +89,12 @@ def try_move(dx, dy):
             score -= walk_reward
             score += w
             if score > 0:
-                print "Success! score: ", score
+                print("Success! score: ", score)
             else:
-                print "Fail! score: ", score
+                print("Fail! score: ", score)
             restart = True
             return
-    #print "score: ", score
+    # print "score: ", score
 
 
 def call_up(event):
@@ -119,6 +119,7 @@ def restart_game():
     score = 1
     restart = False
     board.coords(me, player[0]*Width+Width*2/10, player[1]*Width+Width*2/10, player[0]*Width+Width*8/10, player[1]*Width+Width*8/10)
+
 
 def has_restarted():
     return restart
